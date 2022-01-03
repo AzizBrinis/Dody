@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+
+.login {
+    width: 50%;
+}
+.avatar {
+    width: 50%;
+}
+.loginBody {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.infoSpace {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap: wrap;
+    padding: 0 8%;
+    
+}
+.clientInfo {
+    width: 40%;
+    margin: 2% 1%;
+}
+.email {
+    width: 87%;
+    margin: 2% 1%;
+}
+.phone {
+    width: 87%;
+    margin: 2% 1%;
+}
+.password {
+    width: 87%;
+    margin: 2% 1%;
+}
+h1 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 3%;
+}
+h2 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #C8C6C6;
+    font-size: medium;
+}
+.button-signin {
+    margin: 3%;
+    width: 25%;
+    padding: 2% 0;
+    border-radius: 100px;
+    border: 3px solid #7CD1B8;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    font-size: 1rem;
+    transition: width 0.2s;
+}
+.ups {
+    background-color: #7CD1B8;
+    color : white;
+}
+.ins {
+    color: #7CD1B8;
+}
+.ups:hover {
+    width: 27%;
+}
+.ins:hover {
+    width: 27%;
+}
+.loginMethods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+
+}
+.facebook {
+    width: 8%;
+    margin: 1%;
+    border-radius: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: width 0.13s;
+}
+.google {
+    width: 5%;
+    margin: 1%;
+    padding: 1.69%;
+    border-radius: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: width 0.13s;
+}
+.facebook:hover {
+    width: 10%;
+}
+.google:hover {
+    width: 7%;
+}
+.inputLog {
+    padding: 3%;
+    border-radius: 100px;
+    border: 3px solid #EAEAEA;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+}
+input:focus {
+    border-color: #7CD1B8;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+form {
+    text-align: center;
+}

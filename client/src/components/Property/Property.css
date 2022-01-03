@@ -1,0 +1,119 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.propertyTitle {
+    margin-bottom: 1%;
+    text-align: start;
+}
+.propertyInfo {
+    padding: 0% 20%;
+    margin-bottom: 2%;
+}
+.propertyLocation {
+    text-align: start;
+}
+.ImageGallery {
+    width: 60%;
+    padding: 0 20%;
+}
+.border {
+    border-radius: 50px;
+}
+.infoAndBook {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 20%;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+.space {
+    text-align: start;
+}
+.book {
+    margin: 5% 0 5% 5%;
+    padding: 5%;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+.details {
+    width: 100%;
+    padding: 5% 1% 0 0;
+}
+.price {
+    text-align: start;
+    font-size: 1.3rem;
+}
+.nightTag {
+    text-align: start;
+}
+.reservation {
+    padding: 4%;
+    width: 100%;
+    border-radius: 100px;
+    color : white;
+    background-color: #7CD1B8;
+    transition: background-color 0.2s, color 0.2s;
+}
+.addMaps {
+    padding: 0 20%;
+    height: 30rem;
+    margin-bottom: 3%;
+}
+.gm-style-mtc {
+    display :none;
+}
+.textFlex {
+    display : flex;
+    justify-content : space-between;
+    margin: 5%;
+}
+.startAll {
+    text-align: start;
+}
+.endAll {
+    text-align: end;
+}
+.sizeMe {
+    font-size: 1.5rem;
+}
+.reservation:hover {
+    background-color: white;
+    color: #7CD1B8;
+}
+.totalPrice {
+    margin: 1% 0;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.lineStyle {
+    margin: 10% 0;
+}
+.circular--landscape { 
+    display: inline-block; 
+    position: relative; 
+    width: 150px; 
+    height: 150px; 
+    overflow: hidden; 
+    border-radius: 50%; } 
+.circular--landscape img { 
+    width: auto; 
+    height: 100%; 
+    margin-left: -20px; 
+}
+.hostInfo {
+    width: 80%;
+    padding: 4% 0;
+    line-height: 1.5;
+}
+.host {
+    display : flex;
+}
