@@ -3,9 +3,9 @@ import "./Navbar.css";
 
 const Navbar = (props) => {
     return (
-    <div className="navbar">
+    <div className="navbar" style={props.removeMargin ? props.noSticky ? {position : "relative", marginBottom: "0"} : {marginBottom: "0"} : null}>
         <Link to="/" >
-            <img className="Logo" src="./photos/navbar/logo.png" alt="logo" />
+            <img className="Logo" src={__dirname + "./photos/navbar/logo.png"} alt="logo" />
         </Link>
         {!props.auth ? <div className="NavButtons">
             <Link to="/signup" >
@@ -16,10 +16,12 @@ const Navbar = (props) => {
             </Link>
         </div> : 
             <div class="dropdown">
-            <img className="humberger-img" src="./photos/navbar/humberger.jpg" alt="humberger" />
+            <img className="humberger-img" src={__dirname + "./photos/navbar/humberger.jpg"} alt="humberger" />
             <div class="dropdown-content">
                 <ul>
-                    <li>My Reservations</li>
+                    <Link to="/reservation" style={{ textDecoration: 'none',color: "black"}} >
+                        <li>My Reservations</li>
+                    </Link>
                     <li className="noPadding">
                     <form className="outForm" action="/logout" method="POST">
                 <button className="out"type="submit">Logout</button>

@@ -1,0 +1,254 @@
+.HomeIMG {
+    width: 99%;
+    margin: 0.5%;
+    position: relative;
+
+}
+.FirstImage {
+    width: 100%;
+    border-radius: 40px;
+    
+}
+.ontop {
+    position: absolute;
+    top: 40%;
+    right: 7%;
+    width: 40%;
+    height: 7%;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    padding: 1.5% 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ontopTitle {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 50%;
+    font-size: 5rem;
+    color: #7CD1B8;
+    background-color: white;
+    border-radius: 100px 0 0 100px;
+    opacity: 0.85;
+    padding: 1% 0;
+}
+.bookInputs {
+    border : none;
+}
+.inputLabels {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 6%;
+}
+.placeholderDates {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    font-size: 0.85rem;
+    color : grey;
+}
+.bookingDates {
+    text-align: center;
+}
+.searchIcon {
+    padding: 30%;
+    background-color: #7CD1B8;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.searchIcon:hover {
+    opacity: 0.8;
+
+}
+.locationSection {
+    border-right: 2px solid #EAEAEA;
+    padding-right: 4%;
+}
+.dropdown-content-home {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 10%;
+  }
+.dropdown-home {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+  }
+.beach {
+    width: 25rem;
+    height: 31rem;
+    border-radius: 20px;
+    background-position: center;
+    background-image: url("http://localhost:3000/photos/home/beach1.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    background-size: 100%;
+    display: flex;
+    align-items: end;
+    transition: box-shadow 0.2s, opacity 0.2s;
+}
+.tripSuggestions {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.tripSuggestionsSection {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0;
+}
+.picComment {
+    display: flex;
+    margin-left: 5%;
+}
+.hysto {
+    width: 25rem;
+    height: 15rem;
+    border-radius: 20px;
+    background-position: center;
+    background-image: url("http://localhost:3000/photos/home/hysto.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    background-size: 100%;
+    display: flex;
+    align-items: end;
+    margin-right: 3%;
+    transition: box-shadow 0.2s, opacity 0.2s;
+    margin-bottom: 1rem;
+}
+.desert {
+    width: 25rem;
+    height: 15rem;
+    border-radius: 20px;
+    background-position: center;
+    background-image: url("http://localhost:3000/photos/home/desert1.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    background-size: 100%;
+    display: flex;
+    align-items: end;
+    margin-right: 3%;
+    transition: box-shadow 0.2s, opacity 0.2s;
+}
+.nature {
+    width: 25rem;
+    height: 31rem;
+    border-radius: 20px;
+    background-position: center;
+    background-image: url("http://localhost:3000/photos/home/nature.jpg");
+    background-repeat: no-repeat;
+    color: white;
+    background-size: 100%;
+    display: flex;
+    align-items: end;
+    transition: box-shadow 0.2s, opacity 0.2s;
+}
+.beach:hover , .hysto:hover , .desert:hover , .nature:hover , .tunis:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+.aboutTunisiaSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0 15% 0;
+}
+.aboutTunisia {
+    background-color: #ebf5f3;
+    height: 30rem;
+    width: 90rem;
+    padding: 2%;
+    display: flex;
+}
+.descriptionText {
+    width: 50%;
+    padding: 5% 2%;
+}
+.imageTunisia {
+    width: 50%;
+    text-align: end;
+    padding-right: 4%;
+    padding-top: 2%;
+}
+.titleTunisia   {
+    display: flex;
+    text-align: start;
+    line-height: 1.4;
+    margin-bottom: 5%;
+}
+.descriptionDetails {
+    color : #787A91;
+    font-size: 1.2rem;
+}
+.discoverTunisia {
+
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    margin-bottom: 5%;
+}
+.coloredDiv {
+    background-color: #f9f5f0;
+    height: 100%;
+    width: 60%;
+}
+.region {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding: 4% 5% 5% 4%;
+
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bestDestinationtext {
+    text-align: start;
+}
+.bestDestination {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+    width: 100%;
+    height: 35rem;
+    padding: 0 0 10% 0;
+    display: flex;
+}
+.tunis {
+
+    height: 100%;
+    width: 21rem;
+    margin-left: 2%;
+    border-radius: 20px;
+    padding: 4% 0 0 7%;
+    transition: box-shadow 0.2s, opacity 0.2s;
+}
+.travelers {
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    z-index: 2;
+}
+.lastText {
+    text-align: start;
+    color: white;
+}
+.thetunis {
+    background-size: cover;
+    background-image: url("http://localhost:3000/photos/home/SidiBou.jpg");
+}
+.nabeul {
+    background-size: cover;
+    background-image: url("http://localhost:3000/photos/home/nabeul.jpg");
+}
+.drahem {
+    background-size: cover;
+    background-image: url("http://localhost:3000/photos/home/Djerba.jpg");
+}

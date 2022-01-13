@@ -1,0 +1,241 @@
+
+.Payment {
+    max-height: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.paySection {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+}
+.payPhoto {
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    background-image: url("http://localhost:3000/photos/pay/pay.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    width: 45%;
+}
+.paylogo {
+    width: 15%;
+}
+.payTitle {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5%;
+    align-items: center;
+}
+.h1 {
+    margin-bottom: 0;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    width: 24%;
+}
+.payInputs {
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+.tripInfo {
+    text-align: start;
+    color: black;
+    font-size: 1.6rem;
+}
+.housePhoto {
+    width: 25%;
+    border-radius: 10px;
+    margin: 5% 0;
+}
+.houseInfo {
+    display: flex;
+}
+.tripTitle {
+    text-align: start;
+    color: black;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 5% ;
+    width: 50%;
+}
+.dates {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.datesReceived {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.hrSpace {
+    margin: 4% 0 4% 0;
+}
+.cardTitle {
+    font-size: 1.5rem;
+    text-align: start;
+    margin-bottom: 1%;
+}
+.cardP {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #C8C6C6;
+}
+.cardInput {
+    border-radius: 10px;
+}
+.cardNumberFiled {
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 0;
+}
+.sizeMeRight {
+    width: 45%;
+    text-align: center;
+}
+.sizeMeRight:focus {
+    border-color: #548CFF;
+}
+.Date {
+    width: 20%;
+    
+}
+.cardDate {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+.sizeMeRightDate {
+    text-align: center;
+    width: 40%;
+}
+.sizeMeRightDate:focus {
+    border-color: #548CFF;
+}
+h5 {
+    width: 10%;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    align-items: center;
+}
+.NameOnCard {
+    color: black;
+}
+.FullInfo {
+    padding: 60% 10% 0;
+}
+.pointsCard {
+    font-size: 5rem;
+}
+.masterCard {
+    width: 30%;
+}
+.LogoAndDate {
+    display: flex;
+    padding: 0 15%;
+    margin-top: 7%;
+    margin-bottom: 30%;
+}
+.dataStyling {
+    display: flex;
+    align-items: center;
+}
+.adjustment {
+    margin: 10% 0;
+}
+.settingColor {
+    color : #1e2a52;
+    font-weight:800;
+}
+.settingColorLight {
+    color : #7782a2;
+    font-weight:600;
+}
+.NewToPay {
+    text-align: start;
+}
+.NewTotal {
+    margin-top: 30%;
+}
+.andSizeToo {
+    font-size: 1rem;
+}
+.payAdjustment {
+    margin-top: 20%;
+    background-color: #025eff;
+    border-color: #025eff;
+    border-radius: 20px;
+}
+.payAdjustment:hover {
+    background-color: white;
+    color: #025eff;
+}
+.fixFirstIssueName {
+    height: 19px;
+}
+
+.loadern {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #7CD1B8;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    z-index: 999;
+    height: 5em;
+    width: 5em;
+    overflow: show;
+    margin-bottom: 5%;
+  }
+  .processing {
+    position: fixed;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .centerLoading {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+  .SuccPage {
+      text-align: center;
+  }
+  .myReservations {
+    padding:  1% 3% ;
+    border-radius: 100px;
+    color : white;
+    background-color: #7CD1B8;
+    transition: background-color 0.2s, color 0.2s;
+}
+.myReservations:hover {
+    background-color: white;
+    color: #7CD1B8;
+}
+.backButton {
+    width: 6%;
+    border-radius: 100%;
+    transition: box-shadow 0.2s;
+}
+.backButton:hover {
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 18%);
+    cursor: pointer;
+}

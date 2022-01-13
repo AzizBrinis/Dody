@@ -1,12 +1,12 @@
-require('dotenv').config();
+require('dotenv').config({path : "./config/.env"});
+const connectDB = require("./config/connectDB");
+const User = require("./models/user");
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require('express-session');
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
-const findOrCreate = require('mongoose-findorcreate');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const cors = require('cors')
 
 const app = express();
@@ -14,12 +14,14 @@ const app = express();
 
 
 app.use(express.static("public"));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
-app.use(cors({
-    origin : "http://localhost:3000",
-    methods : "GET, POST, PUT, DELETE",
-    credentials : true,
-}));
+app.use(
+    cors({
+        origin: '*',
+        methods: "GET, POST, PATCH, DELETE, PUT",
+        allowedHeaders: "Content-Type, Authorization",
+    }))
 app.use(session({
     secret : "Little Secret",
     resave : false,
@@ -29,24 +31,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/dodyDB");
+connectDB();
 
-
-
-
-const userSchema = new mongoose.Schema ({
-    firstName : String,
-    lastName : String,
-    username : String,
-    phone : Number,
-    password : String,
-    googleId : String,
-})
-
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
-
-const User = mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy());
 
@@ -59,6 +45,33 @@ passport.serializeUser(function(user, done) {
       done(err, user);
     });
   });
+
+    ////////////////////////////////////////////////////////////: Facebook :////////////////////////////////////////////////////////////////
+
+
+    passport.use(new FacebookStrategy({
+        clientID: process.env.FACEBOOK_APP_ID,
+        clientSecret: process.env.FACEBOOK_APP_SECRET,
+        callbackURL: "http://localhost:8000/auth/facebook/secrets"
+      },
+      function(accessToken, refreshToken, profile, cb) {
+        User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+          return cb(err, user);
+        });
+      }
+    ));
+    app.post('/auth/facebook',
+      passport.authenticate('facebook'));
+    
+    app.get('/auth/facebook/secrets',
+      passport.authenticate('facebook', { failureRedirect: 'http://localhost:3000/login' }),
+      function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('http://localhost:3000/');
+      });
+    
+    
+    ////////////////////////////////////////////////////////////: Google :////////////////////////////////////////////////////////////////
 
   passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
@@ -73,111 +86,23 @@ passport.serializeUser(function(user, done) {
   }
 ));
 
-app.get('/auth/google',
+app.post('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
 
   app.get('/auth/google/secrets', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: 'http://localhost:3000/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/hello');
+    res.redirect('http://localhost:3000/');
   });
-
-app.route("/signup")
-    // .post((req,res) => {
-        // const newUser = new User({
-        //     firstName : req.body.firstName,
-        //     lastName : req.body.lastName,
-        //     email : req.body.email,
-        //     phone : req.body.phone,
-        //     password : req.body.pass
-        // })
-    //     newUser.save((err) => {
-    //         if(!err) {
-    //             res.send({
-    //                 msg : "user added successfully"
-    //             })
-    //         }
-    //     })
-    // })
-    .get((req, res) => {
-        User.find()
-          .then((contacts) => res.send(contacts))
-          .catch((err) => res.send(err));
-      })
-    // .post((req,res) => {
-
-    //     const newUser = new User({
-    //         firstName : req.body.firstName,
-    //         lastName : req.body.lastName,
-    //         username : req.body.email,
-    //         phone : req.body.phone,
-    //     })
-        
-    //     User.register(newUser , req.body.pass, (err,user) => {
-    //         if(err) {
-    //             console.log(err)
-    //             res.redirect("/register")
-    //         }else {
-    //             passport.authenticate("local")(req,res,function(){
-    //                 res.redirect("/secrets")
-    //             })
-    //         }
-    //     })
-    // })
-    .post(function (req, res, next) {
-        const newUser = new User({
-            firstName : req.body.firstName,
-            lastName : req.body.lastName,
-            username : req.body.username,
-            phone : req.body.phone,
-        })
-        User.register(newUser, req.body.password, function (err, user) {
-            if (err) {
-                res.redirect("/signup")
-            }
-    
-            // go to the next middleware
-            next();
-    
-        });
-    }, passport.authenticate('local', { successRedirect: '/hello', failureRedirect: '/loginFailure' }));
+   ////////////////////////////////////////////////////////////: Routes :////////////////////////////////////////////////////////////////
 
 
-app.route("/login")
-.post((req,res) => {
-    const newUser = new User({
-        username : req.body.username,
-        password : req.body.password
-    })
-
-    req.login(newUser,(err) => {
-        if(!err) {
-            passport.authenticate("local")(req,res,function(){
-            res.redirect("/hello")
-            })
-        }
-    })
-})
-
-    app.route("/test")
-    .get((req, res) => {
-        if(req.isAuthenticated()) {
-            res.send({msg : "auth"})
-        } else {
-            res.send({msg : "Notauth"})
-        }
-        User.find()
-          .then((contacts) => res.send(contacts))
-          .catch((err) => res.send(err));
-      });
-      app.route("/logout")
-    .post((req,res) => {
-        req.logout()
-        res.redirect("/login")
-    })
+app.use("", require("./routes/user"));
 
 
-app.listen(8000, () => {
-    console.log("Connected On Port 8000")
-})
+
+const port = process.env.PORT || 8000;
+app.listen(port, (err) => {
+    err ? console.log(err) : console.log(`the server is running on ${port}`);
+});

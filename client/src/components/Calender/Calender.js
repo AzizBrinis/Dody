@@ -25,13 +25,18 @@ function Calender(props) {
         placeholder: 'Please Select...'
     };
     const handledates = (e) => {
-        if (e.value[0] && e.value[1]) {
-        const date1 = new Date(e.value[1]);
-        const date2 = new Date(e.value[0]);
-        props.getDates((date1 - date2)/86400000)
-
+    if(props.home) {
+    props.sendHomeDates(e.value[0],e.value[1]);
     }else{
-        props.getDates(0)
+        if (e.value[0] && e.value[1]) {
+            const date1 = new Date(e.value[1]);
+            const date2 = new Date(e.value[0]);
+            props.getDates((date1 - date2)/86400000,e.value[0],e.value[1])
+    
+        }else{
+            props.getDates(0)
+        }
+
     }
 
     }

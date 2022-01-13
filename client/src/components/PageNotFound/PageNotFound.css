@@ -1,0 +1,8 @@
+.page404 {
+    text-align: center;
+    width: 50%;
+}
+.page404div {
+    display: flex;
+    justify-content: center;
+}
